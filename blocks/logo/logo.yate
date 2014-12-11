@@ -1,0 +1,12 @@
+func nb-logo(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('logo', _nb-extend(defaults, options))
+}
+
+match .logo nb {
+    <span>
+        apply . nb-main-attrs
+    </span>
+}

@@ -1,0 +1,12 @@
+func nb-user(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('user', _nb-extend(defaults, options))
+}
+
+match .user nb {
+    <span>
+        apply . nb-main-attrs
+    </span>
+}

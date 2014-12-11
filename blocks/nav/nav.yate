@@ -1,0 +1,25 @@
+func nb-nav(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('nav', _nb-extend(defaults, options))
+}
+
+match .nav nb {
+    <div>
+        apply . nb-main-attrs
+
+        for .highlights.* {
+            <span class="nav__item">
+                @class += ' nav__item_hl'
+                name()
+            </span>
+        }
+
+        for .rest.* {
+            <span class="nav__item">
+                name()
+            </span>
+        }
+    </div>
+}

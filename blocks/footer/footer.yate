@@ -1,0 +1,12 @@
+func nb-footer(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('footer', _nb-extend(defaults, options))
+}
+
+match .footer nb {
+    <div>
+        apply . nb-main-attrs
+    </div>
+}

@@ -1,0 +1,27 @@
+func nb-header(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('header', _nb-extend(defaults, options))
+}
+
+match .header nb {
+    <div>
+        apply . nb-main-attrs
+        <div class="{ elem('top') }">
+            <div class="{ elem('top-left') }">
+                html(.top.left)
+            </div>
+            <div class="{ elem('top-right') }">
+                for .top.right {
+                <div class="header__item">
+                    html(.)
+                </div>
+                }
+            </div>
+        </div>
+        <div class="{ elem('bottom') }">
+            html(.bottom)
+        </div>
+    </div>
+}

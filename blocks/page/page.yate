@@ -1,0 +1,62 @@
+func nb-page(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('page', _nb-extend(defaults, options))
+}
+
+match .page nb {
+    html('<!doctype html>')
+    <html>
+        <head>
+            <title></title>
+            <link href="css/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            nb-header({
+                'top': {
+                    'left': (
+                        nb-logo()
+                    )
+                    'right': [
+                        nb-phone({
+                            'title': 'для туристов'
+                            'area': '+7495'
+                            'local': '825-25-00'
+                        })
+
+                        nb-phone({
+                            'title': 'для туристов'
+                            'area': '+7495'
+                            'local': '825-25-00'
+                        })
+
+                        nb-user()
+                    ]
+                }
+                'bottom': (
+                    nb-nav({
+                        'highlights': {
+                            'Горящие туры': '#'
+                            'Страны': '#'
+                            'Где купить в 700 городах': '#'
+                        }
+                        'rest': {
+                            'Туристам': '#'
+                            'Агентствам': '#'
+                            'Отелям': '#'
+                            'Билеты': '#'
+                            'О нас': '#'
+                        }
+                    })
+                )
+            })
+            nb-footer({
+                'map': nb-map()
+                'contacts': ()
+                'subsection': ()
+                'copyright': ()
+            })
+        </body>
+    </html>
+}

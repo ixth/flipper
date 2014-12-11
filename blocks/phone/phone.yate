@@ -1,0 +1,21 @@
+func nb-phone(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('phone', _nb-extend(defaults, options))
+}
+
+match .phone nb {
+    <span>
+        apply . nb-main-attrs
+        <span class="{ elem('area') }">
+            .area
+        </span>
+        <span class="{ elem('local') }">
+            .local
+        </span>
+        <span class="{ elem('title') }">
+            .title
+        </span>
+    </span>
+}

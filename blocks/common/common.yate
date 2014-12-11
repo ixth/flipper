@@ -1,0 +1,43 @@
+match .* nb-main-attrs {
+    @class = /.block
+
+    apply . nb-attrs
+    apply .* nb-attrs
+
+    if .id {
+        @id = .id
+    }
+
+    @class += for .class {
+        ' {.}'
+    }
+
+    if .mixin-nb {
+        @data-nb += for .mixin-nb {
+            ' {.}'
+        }
+    }
+
+
+    for .data-nb.* {
+        @data-nb-{name()} = .
+    }
+
+    for .attrs.* {
+        @{name()} = .
+    }
+}
+
+match .* nb-main-content {
+    apply . nb-content
+}
+
+func elem(scalar _elem) {
+    '{ /.block }__{ _elem }'
+}
+
+/// ==========================
+
+func _nb-block(name, nodeset options) {
+    apply _nb-wrap(name, _nb-extend(options, { 'block': name })).* nb
+}
