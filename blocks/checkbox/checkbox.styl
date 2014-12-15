@@ -9,9 +9,27 @@
         text-align: center
 
     &__checkbox
-        background: none
-        border: none
+        opacity: 0
 
     &__label
+        margin-left: .25em
         font-size: 12px
         font-style: italic
+
+    &_theme_orange &__wrap
+        width: 14px
+        height: @width
+        border: 2px solid #fdcc6d
+
+    &_type_block
+        display: block
+        margin: 9px 0
+        padding-left: 26px
+        line-height: 24px
+
+    &_type_block &__label
+        margin-left: 8px
+
+    &_type_block &__wrap
+        vertical-align: -4px
+        margin-left: -26px

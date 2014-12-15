@@ -69,56 +69,58 @@ match / {
                         'content': ()
                     }
                     {
+                        'visible': true()
                         'title': 'Цена'
                         'content': (
                             nb-checkbox({
                                 'label': 'Отдых с детьми (127/127)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
-                            <br/>
                             nb-checkbox({
                                 'label': 'Отдых на море с детьми (111/111)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
-                            <br/>
                             nb-checkbox({
                                 'label': 'Корпоративные поездки (61/61)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
-                            <br/>
                             nb-checkbox({
                                 'label': 'Лечение (43/43)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
-                            <br/>
                             nb-checkbox({
                                 'label': 'Городские отели (42/42)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
-                            <br/>
                             nb-checkbox({
                                 'label': 'Красота & SPA (29/29)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
-                            <br/>
                             nb-checkbox({
                                 'label': 'Экскурсии (13/13)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
-                            <br/>
                             nb-checkbox({
-                                'label': 'Отдых у реки, озера, водохранилица (5/5)'
+                                'label': 'Отдых у реки, озера,<br/> водохранилица (5/5)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
-                            <br/>
                             nb-checkbox({
                                 'label': 'Загородный отдых (4/4)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
-                            <br/>
                             nb-checkbox({
                                 'label': 'Событийный туризм (1/1)'
                                 'theme': 'orange'
+                                'type': 'block'
                             })
                         )
                     }

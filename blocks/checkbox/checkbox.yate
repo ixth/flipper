@@ -8,6 +8,14 @@ func nb-checkbox(nodeset options) {
 match .checkbox nb {
     <span>
         apply . nb-main-attrs
+        if .theme {
+            @class += ' { .block }_theme_{ .theme }'
+        }
+
+        if .type {
+            @class += ' { .block }_type_{ .type }'
+        }
+
         <label class="{ elem('wrap') }">
             <input type="checkbox" class="{ elem('checkbox') }">
                 if .value {
@@ -16,8 +24,7 @@ match .checkbox nb {
             </input>
         </label>
         if .label {
-            '&nbsp;'
-            <label class="{ elem('label') }">{ .label }</label>
+            <label class="{ elem('label') }">{ html(.label) }</label>
         }
     </span>
 }

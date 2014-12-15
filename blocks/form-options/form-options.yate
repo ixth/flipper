@@ -8,9 +8,12 @@ func nb-form-options(nodeset options) {
 match .form-options nb {
     <div>
         apply . nb-main-attrs
-        <div class="{ elem('content') }">
+        <div class="{ elem('wrap') }">
             for .sections {
                 <div class="{ elem('section') }">
+                    if .visible {
+                        @class += ' { elem('section_visible') }'
+                    }
                     <div class="{ elem('title') }">
                         <span class="{ elem('arrow') }"></span>
                         .title
