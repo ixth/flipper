@@ -1,0 +1,10 @@
+func nb-input-geo(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    nb-input(options)
+    //_nb-block('input-geo', _nb-extend(defaults, options))
+}
+
+match .input-geo nb {
+}

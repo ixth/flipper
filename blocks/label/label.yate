@@ -1,0 +1,16 @@
+func nb-label(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('label', _nb-extend(defaults, options))
+}
+
+match .label nb {
+    <label>
+        apply . nb-main-attrs
+        if .for {
+            @for = .for
+        }
+        .content
+    </label>
+}

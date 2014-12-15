@@ -1,0 +1,20 @@
+func nb-input(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('input', _nb-extend(defaults, options))
+}
+
+match .input nb {
+    <label>
+        apply . nb-main-attrs
+        if .wide {
+            @class += ' { .block }_wide'
+        }
+        <input type="text" class="{ elem('input') }">
+            if .value {
+                @value = .value
+            }
+        </input>
+    </label>
+}

@@ -1,0 +1,21 @@
+func nb-form-search(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('form-search', _nb-extend(defaults, options))
+}
+
+match .form-search nb {
+    <div>
+        apply . nb-main-attrs
+        for .sections {
+            <div class="{ elem('section') }">
+                for .rows {
+                    <div class="{ elem('row') }">
+                        html(.)
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}

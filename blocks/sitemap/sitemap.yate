@@ -1,0 +1,18 @@
+func nb-sitemap(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('sitemap', _nb-extend(defaults, options))
+}
+
+match .sitemap nb {
+    <div>
+        apply . nb-main-attrs
+        <h1 class="{ elem('title') }">{ .title }</h1>
+        for .cols {
+            <div class="{ elem('col') }">
+                html(.)
+            </div>
+        }
+    </div>
+}

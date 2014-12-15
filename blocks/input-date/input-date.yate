@@ -1,0 +1,10 @@
+func nb-input-date(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    nb-input(options)
+    //_nb-block('input-date', _nb-extend(defaults, options))
+}
+
+match .input-date nb {
+}

@@ -1,0 +1,25 @@
+func nb-form-options(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('form-options', _nb-extend(defaults, options))
+}
+
+match .form-options nb {
+    <div>
+        apply . nb-main-attrs
+        <div class="{ elem('content') }">
+            for .sections {
+                <div class="{ elem('section') }">
+                    <div class="{ elem('title') }">
+                        <span class="{ elem('arrow') }"></span>
+                        .title
+                    </div>
+                    <div class="{ elem('content') }">
+                        html(.content)
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

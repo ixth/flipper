@@ -1,0 +1,23 @@
+func nb-checkbox(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('checkbox', _nb-extend(defaults, options))
+}
+
+match .checkbox nb {
+    <span>
+        apply . nb-main-attrs
+        <label class="{ elem('wrap') }">
+            <input type="checkbox" class="{ elem('checkbox') }">
+                if .value {
+                    @vale = .value
+                }
+            </input>
+        </label>
+        if .label {
+            '&nbsp;'
+            <label class="{ elem('label') }">{ .label }</label>
+        }
+    </span>
+}

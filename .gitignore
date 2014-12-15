@@ -4,3 +4,5 @@ vendor
 *.css
 *.orig
 nohup.out
+blocks/blocks.styl
+blocks/blocks.yate

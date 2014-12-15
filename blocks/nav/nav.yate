@@ -5,21 +5,22 @@ func nb-nav(nodeset options) {
     _nb-block('nav', _nb-extend(defaults, options))
 }
 
-match .nav nb {
+match /.nav nb {
     <div>
         apply . nb-main-attrs
 
-        for .highlights.* {
-            <span class="nav__item">
-                @class += ' nav__item_hl'
-                name()
-            </span>
-        }
-
-        for .rest.* {
-            <span class="nav__item">
-                name()
-            </span>
-        }
+        apply .highlights.* nb
+        apply .rest.* nb
     </div>
+}
+
+match /.nav.*.* nb {
+    <span class="{ elem('item') }">
+        apply . nb-attrs
+        <a class="{ elem('link') }" href="{ . }">{ name() }</a>
+    </span>
+}
+
+match /.nav.highlights.* nb-attrs {
+    @class += ' { elem('item_hl') }'
 }

@@ -1,0 +1,16 @@
+func nb-button(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('button', _nb-extend(defaults, options))
+}
+
+match .button nb {
+    <button>
+        apply . nb-main-attrs
+        if .type {
+            @type = .type
+        }
+        html(.text)
+    </button>
+}

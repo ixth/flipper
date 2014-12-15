@@ -8,5 +8,19 @@ func nb-footer(nodeset options) {
 match .footer nb {
     <div>
         apply . nb-main-attrs
+        <div class="page__wrap">
+            <div class="{ elem('sitemap') }">
+                html(.sitemap)
+            </div>
+            <div class="{ elem('contacts') }">
+                html(.contacts)
+            </div>
+            <div class="{ elem('subsection') }">
+                html(.subsection)
+            </div>
+            <div class="{ elem('copyright') }">
+                html(.copyright)
+            </div>
+        </div>
     </div>
 }

@@ -1,0 +1,10 @@
+func nb-input-guests(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    nb-input(options)
+    //_nb-block('input-guests', _nb-extend(defaults, options))
+}
+
+match .input-guests nb {
+}

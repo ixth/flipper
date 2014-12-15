@@ -1,0 +1,13 @@
+func nb-icon(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('icon', _nb-extend(defaults, options))
+}
+
+match .icon nb {
+    <span>
+        apply . nb-main-attrs
+        @class += ' icon_{ .icon }'
+    </span>
+}

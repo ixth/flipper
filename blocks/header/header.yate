@@ -9,19 +9,23 @@ match .header nb {
     <div>
         apply . nb-main-attrs
         <div class="{ elem('top') }">
-            <div class="{ elem('top-left') }">
-                html(.top.left)
-            </div>
-            <div class="{ elem('top-right') }">
-                for .top.right {
-                <div class="header__item">
-                    html(.)
+            <div class="page__wrap">
+                <div class="{ elem('logo') }">
+                    html(.top.left)
                 </div>
-                }
+                <div class="{ elem('items') }">
+                    for .top.right {
+                    <div class="{ elem('item') }">
+                        html(.)
+                    </div>
+                    }
+                </div>
             </div>
         </div>
         <div class="{ elem('bottom') }">
-            html(.bottom)
+            <div class="page__wrap">
+                html(.bottom)
+            </div>
         </div>
     </div>
 }

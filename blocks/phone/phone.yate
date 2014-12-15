@@ -11,9 +11,11 @@ match .phone nb {
         <span class="{ elem('area') }">
             .area
         </span>
+        html('&nbsp;')
         <span class="{ elem('local') }">
             .local
         </span>
+        <br/>
         <span class="{ elem('title') }">
             .title
         </span>
