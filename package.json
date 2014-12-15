@@ -12,6 +12,7 @@
     "gulp-stylus": "~1.3.4",
     "gulp-tap": "^0.1.3",
     "gulp-yate": "git://github.com/ainop/gulp-yate",
+    "stylus": "^0.49.3",
     "yate": "*"
   }
 }

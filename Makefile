@@ -1,4 +1,6 @@
+NPM_BIN=./node_modules/.bin
+
 static:
-	stylus --resolve-url --include-css css/style.styl
+	$(NPM_BIN)/stylus --resolve-url --include-css css/style.styl
 
 .PHONY: static
