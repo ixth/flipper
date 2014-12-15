@@ -38,6 +38,9 @@ gulp.task('html', ['blocks.yate'], function () {
 
 gulp.task('style.css', ['blocks.styl'], function () {
     exec('make static', function (err) {
+        if (err) {
+            console.log('\033[31mSomething went wrong\033[91m ');
+        }
         connect.reload();
     });
 });
