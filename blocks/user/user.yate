@@ -8,5 +8,7 @@ func nb-user(nodeset options) {
 match .user nb {
     <span>
         apply . nb-main-attrs
+        <span class="{ elem('icon') }"></span><br/>
+        <span class="{ elem('caption') }">личный<br/>кабинет</span>
     </span>
 }

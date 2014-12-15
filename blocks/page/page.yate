@@ -19,19 +19,19 @@ match .page nb {
                         nb-logo()
                     )
                     'right': [
-                        nb-phone({
-                            'title': 'для туристов'
-                            'area': '+7495'
-                            'local': '825-25-00'
-                        })
-
-                        nb-phone({
-                            'title': 'для туристов'
-                            'area': '+7495'
-                            'local': '825-25-00'
-                        })
-
                         nb-user()
+
+                        nb-phone({
+                            'title': 'для туристов'
+                            'area': '+7495'
+                            'local': '825-25-00'
+                        })
+
+                        nb-phone({
+                            'title': 'для туристов'
+                            'area': '+7495'
+                            'local': '825-25-00'
+                        })
                     ]
                 }
                 'bottom': (
