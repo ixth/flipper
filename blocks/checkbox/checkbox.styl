@@ -2,24 +2,36 @@
 
     &__wrap
         display: inline-block
-        width: 16px
+        width: 12px
         height: @width
-        background: #fff
         border-radius: 5px
         text-align: center
+        vertical-align: -1px
 
     &__checkbox
         opacity: 0
 
     &__label
-        margin-left: .25em
-        font-size: 12px
+        margin-left: .5em
+
+
+    &_theme_white &__wrap
+        border: 2px solid #fff
+        background: #fff
+
+    &_theme_white &__label
         font-style: italic
 
+
     &_theme_orange &__wrap
+        border: 2px solid #fdcc6d
+
+
+    &_size_big &__wrap
         width: 14px
         height: @width
-        border: 2px solid #fdcc6d
+        vertical-align: -4px
+
 
     &_type_block
         display: block
@@ -31,5 +43,4 @@
         margin-left: 8px
 
     &_type_block &__wrap
-        vertical-align: -4px
         margin-left: -26px
