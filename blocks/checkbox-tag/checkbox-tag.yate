@@ -17,6 +17,8 @@ match .checkbox-tag nb {
             }
         </input>
         html(.label)
+        ' '
+        <span class="{ elem('count') }">12</span>
         <span class="{ elem('cross') }"></span>
     </label>
 }
