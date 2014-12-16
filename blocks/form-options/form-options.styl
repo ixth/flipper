@@ -1,5 +1,6 @@
 .form-options
     width: 288px
+    margin-bottom: 15px
     padding: 9px
     border: 2px solid #407fb7
     border-radius: 10px
@@ -9,13 +10,21 @@
         border-radius: 10px
         background: #fff
 
-    &__title,
-    &__content
-        padding: 20px
+    &__section
         border-bottom: 1px solid #e4edf4
+
+    &__section:last-of-type
+        border-bottom: none
 
     &__title
         font: bold 20px 'Rothonda', sans-serif
+
+    &__content
+        border-top: 1px solid #e4edf4
+
+    &__title,
+    &__content
+        padding: 20px
 
     &__arrow
         float: right
