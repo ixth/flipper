@@ -1,0 +1,18 @@
+func nb-panel(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('panel', _nb-extend(defaults, options))
+}
+
+match .panel nb {
+    <div>
+        apply . nb-main-attrs
+        if .theme {
+            @class += ' { mod(.theme) }'
+        }
+        <div class="{ elem('wrap') }">
+            html(.content)
+        </div>
+    </div>
+}
