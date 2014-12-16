@@ -1,0 +1,26 @@
+func nb-search-filter(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('search-filter', _nb-extend(defaults, options))
+}
+
+match .search-filter nb {
+    <div>
+        apply . nb-main-attrs
+        <div class="{ elem('title') }">
+            html(.title)
+            ' '
+            <span class="{ elem('show-all') }">показать все</span>
+        </div>
+        <div class="{ elem('items') }">
+            for .items {
+                if index() < 5 {
+                    <span class="{ elem('item') }">
+                        html(.)
+                    </span>
+                }
+            }
+        </div>
+    </div>
+}
