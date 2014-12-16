@@ -1,0 +1,144 @@
+func nb-serp(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('serp', _nb-extend(defaults, options))
+}
+
+match .serp nb {
+    <div>
+        apply . nb-main-attrs
+
+        <div class="{ elem('head') }">
+            <div class="{ elem('title') }">
+                'Результаты поиска'
+                ' '
+                <span class="{ elem('count') }">(265)</span>
+            </div>
+            nb-search-filter({
+                'title': 'Водоемы'
+                'items': [
+                    nb-checkbox-tag({
+                        'theme': 'orange'
+                        'label': 'Азовское море'
+                        'active': true()
+                    })
+                    nb-checkbox-tag({
+                        'theme': 'orange'
+                        'label': 'Белое море'
+                        'active': true()
+                    })
+                    nb-checkbox-tag({
+                        'theme': 'orange'
+                        'label': 'Каспийское море'
+                    })
+                    nb-checkbox-tag({
+                        'theme': 'orange'
+                        'label': 'Черное море'
+                    })
+                    nb-checkbox-tag({
+                        'theme': 'orange'
+                        'label': 'Охотское море'
+                    })
+                    nb-checkbox-tag({
+                        'theme': 'orange'
+                        'label': 'Красное море'
+                    })
+                ]
+            })
+        </div>
+
+        <div class="{ elem('head') }">
+            nb-panel({
+                'theme': 'brown'
+                'content': (
+                    nb-search-filter({
+                        'title': 'Водоемы'
+                        'items': [
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Азовское море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Белое море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Каспийское море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Черное море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Охотское море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Красное море'
+                            })
+                        ]
+                    })
+                )
+            })
+            nb-panel({
+                'theme': 'brown'
+                'content': (
+                    nb-search-filter({
+                        'title': 'Водоемы'
+                        'items': [
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Адриатическое море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Азовское море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Белое море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Каспийское море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Черное море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Охотское море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Северное море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Средиземное море'
+                            })
+                            nb-checkbox({
+                                'theme': 'orange'
+                                'label': 'Эгейское море'
+                            })
+                        ]
+                    })
+                )
+            })
+        </div>
+
+        <div class="{ elem('throbber') }">
+            nb-throbber()
+        </div>
+
+        for .items {
+            <div class="{ elem('item') }">
+                html(.)
+            </div>
+        }
+    </div>
+}
