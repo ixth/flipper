@@ -1,0 +1,22 @@
+.checkbox-tag
+    display: inline-block
+    padding: 3px 8px
+    border-radius: 11px
+    font: nomal 13px 'Arial', sans-serif
+
+    &__checkbox
+        display: none
+
+    &__cross
+        display: inline-block
+        width: 10px
+        height: 9px
+        margin: 0 -3px 0 5px
+        background: url(cross.png)
+        visibility: hidden
+
+    &_active
+        border: 2px solid #fecc6c
+
+    &_active &__cross
+        visibility: visible

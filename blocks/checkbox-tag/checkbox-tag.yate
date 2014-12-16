@@ -1,0 +1,22 @@
+func nb-checkbox-tag(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('checkbox-tag', _nb-extend(defaults, options))
+}
+
+match .checkbox-tag nb {
+    <label>
+        apply . nb-main-attrs
+        if .active {
+            @class += ' { boolmod(.active) }'
+        }
+        <input type="checkbox" class="{ elem('checkbox') }">
+            if .value {
+                @vale = .value
+            }
+        </input>
+        html(.label)
+        <span class="{ elem('cross') }"></span>
+    </label>
+}
