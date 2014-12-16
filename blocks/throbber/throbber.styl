@@ -1,0 +1,19 @@
+.throbber
+    display: inline-block
+    width: 97px
+    height: @width
+    text-align: center
+    background: url(throbber.png) center center no-repeat
+
+    &:before,
+    &__counter
+        display: inline-block
+        vertical-align: middle
+
+    &:before
+        content: ''
+        height: 100%
+
+    &__counter
+        font: bold 20px 'Rothonda', sans-serif
+        color: #407fb7

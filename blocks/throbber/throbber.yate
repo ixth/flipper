@@ -1,0 +1,13 @@
+func nb-throbber(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('throbber', _nb-extend(defaults, options))
+}
+
+match .throbber nb {
+    <span>
+        apply . nb-main-attrs
+        <span class="{ elem('counter') }">60%</span>
+    </span>
+}
