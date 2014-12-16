@@ -10,9 +10,12 @@ match .form-search nb {
         apply . nb-main-attrs
         for .sections {
             <div class="{ elem('section') }">
+                if .curly {
+                    @class += ' { elem('section_curly') }'
+                }
                 for .rows {
                     <div class="{ elem('row') }">
-                        html(.)
+                        html(.content)
                     </div>
                 }
             </div>

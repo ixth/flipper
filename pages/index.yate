@@ -6,57 +6,90 @@ match / {
             nb-form-search({
                 'sections': [
                     {
-                        'rows': [(
-                            <h1>
-                                nb-icon({ 'icon': 'search' })
-                                ' Найти'
-                            </h1>
-                            'Отдых, лечение, эксурсии по России, Абхазии, Белоруссии'
-                        )]
-                    }
-                    {
-                        'rows': [
-                            nb-label({ 'content': 'Куда' })
-                            nb-input-geo({ 'wide': true() })
-                        ]
-                    }
-                    {
-                        'rows': [
-                            nb-label({ 'content': 'Когда' })
-                            nb-input-date({ 'wide': true() })
-                        ]
-                    }
-                    {
-                        'rows': [
-                            nb-label({ 'content': 'Продолжительность, дн.' })
-                            (
-                                nb-select({
-                                    'attrs': { 'style': 'width: 70px' }
-                                    'prefix': 'от'
-                                    'value': 7
-                                })
-                                nb-select({
-                                    'attrs': { 'style': 'width: 70px' }
-                                    'prefix': 'до'
-                                    'value': 14
-                                })
+                        'curly': true()
+                        'rows': [{
+                            'content': (
+                                <h1>
+                                    nb-icon({ 'icon': 'search' })
+                                    ' Найти'
+                                </h1>
+                                'Отдых, лечение, эксурсии по России, Абхазии, Белоруссии'
                             )
-                            nb-checkbox({ 'label': 'Даты поездки неизвестны' })
+                        }]
+                    }
+                    {
+                        'rows': [
+                            {
+                                'content': nb-label({ 'content': 'Куда' })
+                            }
+                            {
+                                'content': nb-input-geo({ 'wide': true() })
+                            }
                         ]
                     }
                     {
                         'rows': [
-                            nb-label({ 'content': 'Гости' })
-                            nb-input-guests({ 'wide': true() })
-                            nb-checkbox({ 'label': 'Моментальное подтверждение' })
+                            {
+                                'content': nb-label({ 'content': 'Когда' })
+                            }
+                            {
+                                'content': nb-input-date({ 'wide': true() })
+                            }
                         ]
                     }
                     {
                         'rows': [
-                            nb-button({
-                                'text': 'Найти'
-                                'type': 'submit'
-                            })
+                            {
+                                'content': nb-label({ 'content': 'Продолжительность, дн.' })
+                            }
+                            {
+                                'content': (
+                                    nb-select({
+                                        'attrs': { 'style': 'width: 70px' }
+                                        'prefix': 'от'
+                                        'value': 7
+                                    })
+                                    nb-select({
+                                        'attrs': { 'style': 'width: 70px' }
+                                        'prefix': 'до'
+                                        'value': 14
+                                    })
+                                )
+                            }
+                            {
+                                'content': nb-checkbox({
+                                    'theme': 'white'
+                                    'label': 'Даты поездки неизвестны'
+                                })
+                            }
+                        ]
+                    }
+                    {
+                        'rows': [
+                            {
+                                'content': nb-label({ 'content': 'Гости' })
+                            }
+                            {
+                                'content': nb-input-guests({ 'wide': true() })
+                            }
+                            {
+                                'content': nb-checkbox({
+                                    'theme': 'white'
+                                    'label': 'Моментальное подтверждение'
+                                })
+                            }
+                        ]
+                    }
+                    {
+                        'rows': [
+                            {
+                                'content': (
+                                    nb-button({
+                                        'text': 'Найти'
+                                        'type': 'submit'
+                                    })
+                                )
+                            }
                         ]
                     }
                 ]
