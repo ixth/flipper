@@ -9,7 +9,7 @@ match .input nb {
     <label>
         apply . nb-main-attrs
         if .wide {
-            @class += ' { .block }_wide'
+            @class += ' { boolmod(.wide) }'
         }
         <input type="text" class="{ elem('input') }">
             if .value {

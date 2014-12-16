@@ -32,6 +32,14 @@ match .* nb-main-content {
     apply . nb-content
 }
 
+func mod(nodeset _mod) {
+    '{ /.block }_{ name(_mod) }_{ _mod }'
+}
+
+func boolmod(nodeset _mod) {
+    '{ /.block }_{ name(_mod) }'
+}
+
 func elem(scalar _elem) {
     '{ /.block }__{ _elem }'
 }
