@@ -1,0 +1,55 @@
+func nb-result(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('result', _nb-extend(defaults, options))
+}
+
+match .result nb {
+    <div>
+        apply . nb-main-attrs
+        if .theme {
+            @class += ' { mod(.theme) }'
+        }
+        <div class="{ elem('info') }">
+            <img src="image.png" class="{ elem('img') }"/>
+
+
+            <div class="{ elem('right') }">
+                if .category {
+                    <div class="{ elem('category') }">
+                        html(.category)
+                    </div>
+                }
+
+                <span class="{ elem('fav') }">
+                    nb-icon({ 'icon': 'fav' })
+                    ' '
+                    'Добавить в избранное'
+                </span>
+            </div>
+
+            <div class="{ elem('title') }">
+                html(.title)
+            </div>
+
+            <div class="{ elem('area') }">
+                html(.area)
+                ' '
+                <a href="#" class="{ elem('map') }">посмотреть на карте</a>
+            </div>
+
+            <div class="{ elem('themes') }">
+                for .themes {
+                    if index() {
+                        ', '
+                    }
+                    <a class="{ elem('theme') }" href="#">{ html(.) }</a>
+                }
+            </div>
+        </div>
+        <div class="{ elem('content') }">
+            html(.content)
+        </div>
+    </div>
+}
