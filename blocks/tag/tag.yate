@@ -1,0 +1,16 @@
+func nb-tag(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('tag', _nb-extend(defaults, options))
+}
+
+match .tag nb {
+    <span>
+        apply . nb-main-attrs
+        if .theme {
+            @class += ' { mod(.theme) }'
+        }
+        html(.text)
+    </span>
+}
