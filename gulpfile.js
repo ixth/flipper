@@ -4,6 +4,7 @@ var exec = require('child_process').exec;
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var concat = require('gulp-concat');
+var prettify = require('gulp-html-prettify');
 var stylus = require('gulp-stylus');
 var tap = require('gulp-tap');
 var yate = require('gulp-yate');
@@ -46,7 +47,9 @@ gulp.task('style.css', ['blocks.styl'], function () {
 });
 
 gulp.task('beautify', function () {
-    exec('html-beautify -r index.html');
+    gulp.src('./*.html')
+        .pipe(prettify({ indent_char: ' ', indent_size: 4 }))
+        .pipe(gulp.dest('./'));
 });
 
 gulp.task('connect', function () {
