@@ -131,14 +131,14 @@ match .serp nb {
             })
         </div>
 
-        <div class="{ elem('throbber') }">
-            nb-throbber()
-        </div>
-
         for .items {
             <div class="{ elem('item') }">
                 html(.)
             </div>
         }
+
+        <div class="{ elem('throbber') }">
+            nb-throbber()
+        </div>
     </div>
 }

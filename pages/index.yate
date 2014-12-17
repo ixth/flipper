@@ -193,11 +193,15 @@ match / {
         'content': (
             nb-serp({
                 'items': [
+
                     nb-result({
+                        'theme': 'blue'
                         'title': (
                             'Светлана, частная гостиница'
+                            ' '
                             nb-icon({ 'icon': 'vip' })
-                            nb-icon({ 'icon': 'dolphin' })
+                            ' '
+                            nb-icon({ 'icon': 'dolphi' })
                         )
                         'area': 'Россия - Краснодарский край - Адлер'
                         'themes': [
@@ -206,7 +210,175 @@ match / {
                             'отдых с детьми'
                         ]
                         'category': 'Комфортный уровень'
-                        'content': ()
+                        'content': (
+                            nb-table({
+                                'wide': true()
+                                'theme': 'blue'
+                                'head': {
+                                    'rows': [
+                                        [
+                                            {
+                                                'content': 'Заезд'
+                                                'colspan': 2
+                                            }
+                                            { 'content': 'Тариф' }
+                                            { 'content': 'Размещение' }
+                                            { 'content': 'Питание' }
+                                            {
+                                                'content': 'Стоимость'
+                                                'colspan': 2
+                                            }
+                                        ]
+                                    ]
+                                }
+                                'rows': [
+                                    [
+                                        (
+                                            '27.10.14'
+                                            <br/>
+                                            <span class="result__note">понедельник</span>
+                                            <br/>
+                                            nb-icon({ 'icon': 'hot' })
+                                        )
+                                        (
+                                            '2 дня'
+                                            <br/>
+                                            <span class="result__note">до 31.10 вс</span>
+                                        )
+                                        (
+                                            'Отдых'
+                                            <br/>
+                                            nb-tag({
+                                                'theme': 'solid-grey'
+                                                'text': '20%'
+                                            })
+                                            nb-tag({
+                                                'theme': 'solid-grey'
+                                                'text': 'АКЦИЯ'
+                                            })
+                                        )
+                                        (
+                                            '2-х местный люкс'
+                                            nb-icon({ 'icon': 'person' })
+                                            nb-icon({ 'icon': 'person' })
+                                            nb-icon({ 'icon': 'person' })
+                                        )
+                                        (
+                                            'Завтрак и ужин'
+                                        )
+                                        (
+                                            nb-tag({
+                                                'theme': 'solid-blue'
+                                                'text': '11%'
+                                            })
+                                            nb-tag({
+                                                'theme': 'solid-orange'
+                                                'text': 'SALE'
+                                            })
+                                        )
+                                        (
+                                            nb-tag({
+                                                'theme': 'strikeout'
+                                                'text': '35 400 руб.'
+                                            })
+                                            <br/>
+                                            nb-tag({
+                                                'theme': 'bullet-orange'
+                                                'text': '25 400 руб.'
+                                            })
+                                            <br/>
+                                            <span class="result__special">последний номер!</span>
+                                            <span class="result__buy">Купить</span>
+                                        )
+                                    ]
+                                ]
+                            })
+                        )
+                    })
+
+                    nb-result({
+                        'theme': 'brown'
+                        'title': (
+                            'Светлана, частная гостиница'
+                            ' '
+                            nb-icon({ 'icon': 'vip' })
+                            ' '
+                            nb-icon({ 'icon': 'dolphi' })
+                        )
+                        'area': 'Россия - Краснодарский край - Адлер'
+                        'themes': [
+                            'пляжный отдых'
+                            'курортное лечение'
+                            'отдых с детьми'
+                        ]
+                        'content': (
+                            nb-table({
+                                'wide': true()
+                                'theme': 'brown'
+                                'rows': [
+                                    [
+                                        (
+                                            '27.10.14'
+                                            <br/>
+                                            <span class="result__note">понедельник</span>
+                                            <br/>
+                                            nb-icon({ 'icon': 'hot' })
+                                        )
+                                        (
+                                            '2 дня'
+                                            <br/>
+                                            <span class="result__note">до 31.10 вс</span>
+                                        )
+                                        (
+                                            'Отдых'
+                                            <br/>
+                                            nb-tag({
+                                                'theme': 'solid-grey'
+                                                'text': '20%'
+                                            })
+                                            nb-tag({
+                                                'theme': 'solid-grey'
+                                                'text': 'АКЦИЯ'
+                                            })
+                                        )
+                                        (
+                                            '2-х местный люкс'
+                                            ' '
+                                            nb-icon({ 'icon': 'person' })
+                                            nb-icon({ 'icon': 'person' })
+                                            nb-icon({ 'icon': 'person' })
+                                        )
+                                        (
+                                            'Завтрак и ужин'
+                                        )
+                                        (
+                                            nb-tag({
+                                                'theme': 'solid-blue'
+                                                'text': '11%'
+                                            })
+                                            nb-tag({
+                                                'theme': 'solid-orange'
+                                                'text': 'SALE'
+                                            })
+                                        )
+                                        (
+                                            nb-tag({
+                                                'theme': 'strikeout'
+                                                'text': '35 400 руб.'
+                                            })
+                                            <br/>
+                                            nb-tag({
+                                                'theme': 'bullet-orange'
+                                                'text': '25 400 руб.'
+                                            })
+                                            <br/>
+                                            <span class="result__special">последний номер!</span>
+                                            <span class="result__buy">Купить</span>
+                                        )
+                                    ]
+                                ]
+                            })
+                        )
                     })
                 ]
             })
