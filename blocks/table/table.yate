@@ -1,0 +1,54 @@
+func nb-table(nodeset options) {
+    defaults = {
+        'none': 'none'
+    }
+    _nb-block('table', _nb-extend(defaults, options))
+}
+
+match .table nb {
+    <table>
+        apply . nb-main-attrs
+        if .wide {
+            @class += ' { boolmod(.wide) }'
+        }
+
+        if .theme {
+            @class += ' { mod(.theme) }'
+        }
+
+        if .head {
+            <thead>
+                apply .head.* nb-table__row
+            </thead>
+        }
+        if .foot {
+            <tfoot>
+                apply .foot.* nb-table__row
+            </tfoot>
+        }
+        <tbody>
+            apply .* nb-table__row
+        </tbody>
+    </table>
+}
+
+match .rows nb-table__row {
+    <tr>
+        apply .* nb-table__cell
+    </tr>
+}
+
+match /.table.rows.* nb-table__cell {
+    <td>
+        html(.)
+    </td>
+}
+
+match /.table.foot.rows.* | /.table.head.rows.* nb-table__cell {
+    <th>
+        if .colspan {
+            @colspan = .colspan
+        }
+        html(.content)
+    </th>
+}
